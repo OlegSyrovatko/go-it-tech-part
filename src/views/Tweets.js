@@ -1,6 +1,6 @@
 // import React, { useEffect } from 'react';
 // import { useSelector, useDispatch } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 // import  ContactList    from 'components/ContactList';
 
 // import { fetchContacts } from 'redux/contacts/operations';
@@ -37,10 +37,10 @@ const Tweets = () => {
 return (
   <>
     {/* <Book> */}
-
-        <Button type="button" >
-          Back 
-        </Button>
+        <Link to='/'><Button type="button" >
+           Back
+        </Button></Link>
+        
     
     
       {/* <ContactList/> */}

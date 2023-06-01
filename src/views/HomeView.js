@@ -7,7 +7,7 @@ const styles = {
     justifyContent: 'center',
   },
   title: {
-    marginTop: 100,
+    marginTop: 50,
     fontWeight: 500,
     fontSize: 48,
     textAlign: 'center',
@@ -27,14 +27,16 @@ const styles = {
 
 const HomeView = () => (
   <div style={styles.container}>
+
     <h1 style={styles.title}>
       Place for Your advertisment :){' '}
       <span role="img" aria-label="Hi">
         💁‍♀️
       </span>
     </h1>
+
     <div style={styles.description} >
-      Welcome to our user-friendly app designed to simplify your life! With our intuitive interface and powerful features, you can effortlessly manage your tasks, stay organized, and boost your productivity. Say goodbye to chaos and hello to efficiency as you streamline your daily routine. Let our app be your trusted companion on your journey towards success. Get started today and experience the convenience and ease our app brings to your fingertips.
+      Introducing "TestApp," your ultimate social networking platform that revolutionizes the way you connect and share. Experience the power of seamless communication, express yourself freely with short and impactful messages, and build a vibrant community around your interests. Welcome to TestApp, where every moment is an opportunity to engage, discover, and connect with the world. Join us today and embark on a journey of limitless possibilities!
     </div>
   </div>
 );
