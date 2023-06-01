@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/go-it-tech-part/static/css/main.b4aeb0ef.css",
-    "main.js": "/go-it-tech-part/static/js/main.a7531253.js",
+    "main.js": "/go-it-tech-part/static/js/main.4c055817.js",
+    "static/js/616.9635af45.chunk.js": "/go-it-tech-part/static/js/616.9635af45.chunk.js",
     "index.html": "/go-it-tech-part/index.html",
     "main.b4aeb0ef.css.map": "/go-it-tech-part/static/css/main.b4aeb0ef.css.map",
-    "main.a7531253.js.map": "/go-it-tech-part/static/js/main.a7531253.js.map"
+    "main.4c055817.js.map": "/go-it-tech-part/static/js/main.4c055817.js.map",
+    "616.9635af45.chunk.js.map": "/go-it-tech-part/static/js/616.9635af45.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b4aeb0ef.css",
-    "static/js/main.a7531253.js"
+    "static/js/main.4c055817.js"
   ]
 }
