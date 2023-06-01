@@ -1,7 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
-
 axios.defaults.baseURL = "https://6477a5629233e82dd53bfca6.mockapi.io";
 
 export const fetchTweets = createAsyncThunk(
@@ -18,14 +16,30 @@ export const fetchTweets = createAsyncThunk(
 
 
 
-// export const deleteContact = createAsyncThunk(
-//   'contacts/deleteContact',
-//   async (contactId, thunkAPI) => {
-//     try {
-//       const response = await axios.delete(`/contacts/${contactId}`);
-//       return response.data;
-//     } catch (e) {
-//       return thunkAPI.rejectWithValue(e.message);
-//     }
-//   }
-// );
+export const followTweet = createAsyncThunk(
+  'tweets/followTweet',
+  async (tweet, thunkAPI) => {
+    try {
+      const response = await axios.put(`/users/${tweet.id}`, {
+        followers: tweet.followers+1,
+      });
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const unFollowTweet = createAsyncThunk(
+  'tweets/unFollowTweet',
+  async (tweet, thunkAPI) => {
+    try {
+      const response = await axios.put(`/users/${tweet.id}`, {
+        followers: tweet.followers-1,
+      });
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

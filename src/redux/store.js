@@ -12,6 +12,7 @@ import { tweetsReducer } from "./tweets/slice";
 import { filtersReducer } from "./filtersSlice";
 
 
+
 export const store = configureStore({
   reducer: {
     tweets: tweetsReducer,

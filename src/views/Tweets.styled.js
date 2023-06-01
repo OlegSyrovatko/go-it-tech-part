@@ -77,3 +77,9 @@ export const UL = styled.div`
   gap: 0px;
   margin-top: 10px;
 `;
+
+export const Li = styled.div`
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+`;

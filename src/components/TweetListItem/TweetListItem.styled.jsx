@@ -1,11 +1,5 @@
 import styled from '@emotion/styled';
 
-export const Li = styled.div`
-  display: flex;
-  gap: 15px;
-  align-items: baseline;
-`;
-
 export const P = styled.p`
   line-height: 0;
 `;

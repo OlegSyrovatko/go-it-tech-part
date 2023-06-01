@@ -1,27 +1,38 @@
-// import { useDispatch } from 'react-redux';
-// import { deleteContact } from 'redux/contacts/operations';
+import { useSelector, useDispatch } from 'react-redux';
+import { followTweet, unFollowTweet } from 'redux/tweets/operations';
+import { selectFollowers } from 'redux/tweets/selectors';
 
-import { Li, P, Button } from './TweetListItem.styled';
+import { P, Button } from './TweetListItem.styled';
 
-const TweetListItem = ({ id, user, avatar, tweets, followers }) => {
-  //   const dispatch = useDispatch();
-
-  //   const handleDelete = () => dispatch(deleteContact(id));
+const TweetListItem = ({ tweet }) => {
+  const dispatch = useDispatch();
+  const myFollowers = useSelector(selectFollowers);
+  const isFollower = myFollowers.includes(Number(tweet.id));
 
   return (
-    <Li key={id}>
-      <P>{user}</P>
-      <P>{avatar}</P>
-      <P>{tweets}</P>
-      <P>{followers}</P>
-      <Button
-        onClick={() => {
-          //   handleDelete(id);
-        }}
-      >
-        Follow
-      </Button>
-    </Li>
+    <>
+      <P>{tweet.user}</P>
+      <P>{tweet.avatar}</P>
+      <P>{tweet.tweets}</P>
+      <P>{tweet.followers}</P>
+      {isFollower ? (
+        <Button
+          onClick={() => {
+            dispatch(unFollowTweet(tweet));
+          }}
+        >
+          UnFollow
+        </Button>
+      ) : (
+        <Button
+          onClick={() => {
+            dispatch(followTweet(tweet));
+          }}
+        >
+          Follow
+        </Button>
+      )}
+    </>
   );
 };
 export default TweetListItem;

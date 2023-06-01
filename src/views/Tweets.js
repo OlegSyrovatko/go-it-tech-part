@@ -15,6 +15,7 @@ import {
   Book,
   Button,
   UL,
+  Li,
   // ContactsHead,
 } from './Tweets.styled';
 
@@ -41,14 +42,18 @@ const Tweets = () => {
 return (
   <>
     <Book>
-        <Link to='/'><Button type="button" >
-           Back
-        </Button></Link><br /><br />
-        <Filter />
-          {filteredTweets.length > 0 && (
+      <Link to='/'>
+        <Button type="button" >
+          Back
+        </Button>
+      </Link><br /><br />
+      <Filter />
+      {filteredTweets.length > 0 && (
         <UL>
           {filteredTweets.map(tweet => (
-            <TweetListItem key={tweet.id} {...tweet} />
+            <Li key={tweet.id}>
+              <TweetListItem tweet={tweet} />
+            </Li>
           ))}
         </UL>
       )}
