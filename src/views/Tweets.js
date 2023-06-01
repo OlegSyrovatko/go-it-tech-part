@@ -2,7 +2,7 @@
 // import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import  ContactList    from 'components/ContactList';
-
+import Filter from 'components/Filter';
 // import { fetchContacts } from 'redux/contacts/operations';
 // import { selectLoading } from 'redux/contacts/selectors';
 
@@ -39,8 +39,8 @@ return (
     {/* <Book> */}
         <Link to='/'><Button type="button" >
            Back
-        </Button></Link>
-        
+        </Button></Link><br /><br />
+        <Filter />
     
     
       {/* <ContactList/> */}

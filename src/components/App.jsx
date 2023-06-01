@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Container from './Container';
 
@@ -12,7 +12,14 @@ export default function App() {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomeView />} />
-          <Route path="/tweets" element={<Tweets />} />
+          <Route
+            path="/tweets"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Tweets />
+              </Suspense>
+            }
+          />
         </Route>
       </Routes>
     </Container>
