@@ -2,7 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setStatusFilter } from 'redux/filtersSlice';
-import { selectFilter } from 'redux/contacts/selectors';
+import { getFilter } from 'redux/selectors';
 import { Find } from './Filter.styled';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
@@ -10,7 +10,7 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 
 const Filter = () => {
-  const filterDefault = useSelector(selectFilter);
+  const filterDefault = useSelector(getFilter);
   // const [filter, setFilter] = useState('');
   const dispatch = useDispatch();
   const handleChange = e => {

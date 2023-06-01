@@ -8,13 +8,13 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-// import { contactsReducer } from "./contactsSlice";
+import { tweetsReducer } from "./tweets/slice";
 import { filtersReducer } from "./filtersSlice";
 
 
 export const store = configureStore({
   reducer: {
-//     contacts: contactsReducer,
+    tweets: tweetsReducer,
     filters: filtersReducer,
   },
   middleware(getDefaultMiddleware) {

@@ -1,10 +1,5 @@
 import styled from '@emotion/styled';
 
-export const ModalItems = styled.div`
-  display: flex;
-  gap: 15px;
-  flex-direction: column;
-`;
 
 export const Container = styled.div`
   display: flex;
@@ -30,12 +25,7 @@ export const ContactsHead = styled.div`
   gap: 15px;
 `;
 
-export const ModalBlock = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
+
 
 export const Book = styled.div`
   margin-top: 20px;
@@ -79,4 +69,11 @@ export const CloseButton = styled.button`
     background-color: #000;
     color: #fff;
   }
+`;
+
+export const UL = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  margin-top: 10px;
 `;

@@ -1,50 +1,58 @@
-// import React, { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import  ContactList    from 'components/ContactList';
+// import { getFilter } from 'redux/selectors';
+
+import { fetchTweets } from 'redux/tweets/operations';
+import { selectLoading } from 'redux/tweets/selectors';
+import { selectAllTweets } from 'redux/tweets/selectors';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
+
 import Filter from 'components/Filter';
-// import { fetchContacts } from 'redux/contacts/operations';
-// import { selectLoading } from 'redux/contacts/selectors';
+import TweetListItem from 'components/TweetListItem';
 
-// import { Loading } from 'notiflix/build/notiflix-loading-aio';
-
-
-// import  ContactForm from '../components/ContactForm';
 import {
-//   Book,
+  Book,
   Button,
-//   CloseButton,
-//   ModalBlock,
-//   ModalItems,
+  UL,
   // ContactsHead,
 } from './Tweets.styled';
 
 
 const Tweets = () => {
-
-//   const isLoading = useSelector(selectLoading);
-//   useEffect(() => {
-//     if (isLoading) Loading.circle('Loading...')
-//     else Loading.remove()
-      
-//   }, [isLoading]);
+   const dispatch = useDispatch();
+  // const filter = useSelector(getFilter);
   
-
-//   useEffect(() => {
-//     dispatch(fetchContacts());
-//   }, [dispatch]);
+  const filteredTweets = useSelector(selectAllTweets);
+  // const filteredTweets = tweets.filter(contact =>
+  //   contact.name.toLowerCase().includes(lowerFilter)
+  // );
+  const isLoading = useSelector(selectLoading);
+  useEffect(() => {
+    if (isLoading) Loading.circle('Loading...')
+    else Loading.remove()
+      
+  }, [isLoading]);
+  
+  useEffect(() => {
+    dispatch(fetchTweets());
+  }, [dispatch]);
 
 return (
   <>
-    {/* <Book> */}
+    <Book>
         <Link to='/'><Button type="button" >
            Back
         </Button></Link><br /><br />
         <Filter />
-    
-    
-      {/* <ContactList/> */}
-    {/* </Book> */}
+          {filteredTweets.length > 0 && (
+        <UL>
+          {filteredTweets.map(tweet => (
+            <TweetListItem key={tweet.id} {...tweet} />
+          ))}
+        </UL>
+      )}
+    </Book>
   </>
 
  );
