@@ -15,6 +15,8 @@ import {
   Button,
   UL,
   Li,
+  Goit,
+  Pic,
   // ContactsHead,
 } from './Tweets.styled';
 
@@ -67,6 +69,7 @@ const Tweets = () => {
             <UL>
               {filteredTweets.slice(0, visibleTweets).map(tweet => (
                 <Li key={tweet.id}>
+                  <Goit /><Pic />
                   <TweetListItem tweet={tweet} />
                 </Li>
               ))}
