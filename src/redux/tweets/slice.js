@@ -1,7 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 import { fetchTweets, followTweet, unFollowTweet } from './operations';
 
 import Notiflix from 'notiflix';
+
+const persistConfig = {
+  key: 'tweets',
+  storage,
+};
 
 const handlePending = state => {
   state.isLoading = true;
@@ -60,4 +67,8 @@ const tweetsSlice = createSlice({
   },
 });
 
-export const tweetsReducer = tweetsSlice.reducer;
+export const tweetsReducer = persistReducer(
+  persistConfig,
+  tweetsSlice.reducer
+);
+
