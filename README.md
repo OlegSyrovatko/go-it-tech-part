@@ -42,8 +42,8 @@ displays at least 3 tweets, and the remaining tweets are loaded when the "Load
 More" button is clicked.
 
 <h3>Additional Features</h3> 
-<ul><li>React Router is used for routing within the application.</li>
-<li><ul><li> The
+<ul><li>React Router is used for routing within the application.
+<ul><li> The
 application has the following routes: 
 '/' - Home component, the main page.
 </li><li>
@@ -53,10 +53,9 @@ displaying tweets. The Tweets page includes a Back button that leads back to the
 main page.
 </li></ul>
 </li><li>
+Filtering is available with a dropdown menu offering three options: show all,
+follow, and followings. The design of the dropdown is customizable.
 <ul><li>
- Filtering is available with a dropdown menu offering three options:
-show all, follow, and followings. The design of the dropdown is customizable.
-</li><li>
 show all - displays all tweets.
 </li><li>
  follow - displays tweets with the follow status.
