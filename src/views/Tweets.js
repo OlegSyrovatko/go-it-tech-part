@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getFilter } from 'redux/selectors';
 
 import { fetchTweets } from 'redux/tweets/operations';
@@ -18,11 +18,12 @@ import {
   Goit,
   Pic,
   Ellip, 
-  // ContactsHead,
 } from './Tweets.styled';
 
 const Tweets = () => {
   const dispatch = useDispatch();
+  // const location = useLocation();
+  const navigate = useNavigate();
   const filter = useSelector(getFilter);
   const tweets = useSelector(selectAllTweets);
   const followers = useSelector(selectFollowers);
@@ -52,6 +53,10 @@ const Tweets = () => {
     dispatch(fetchTweets());
   }, [dispatch]);
 
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   const handleLoadMore = () => {
     setVisibleTweets(prevVisibleTweets => prevVisibleTweets + 3);
   };
@@ -59,11 +64,10 @@ const Tweets = () => {
   return (
     <>
       <Book>
-        <Link to='/'>
-          <Button type="button">
-            Back
-          </Button>
-        </Link><br /><br />
+        <Button onClick={handleGoBack}>
+          Back
+        </Button>
+        <br /><br />
         <Filter />
         {filteredTweets.length > 0 && (
           <>
@@ -76,10 +80,10 @@ const Tweets = () => {
               ))}
             </UL>
             {filteredTweets.length > visibleTweets && (
-              <Button type="button" onClick={handleLoadMore}>
+              <Button onClick={handleLoadMore}>
                 Load More
               </Button>
-            )}
+            )}<br /><br />
           </>
         )}
       </Book>

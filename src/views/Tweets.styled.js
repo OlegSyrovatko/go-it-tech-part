@@ -9,30 +9,12 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Avatar = styled.img`
-  margin-right: 4px;
-  margin-left: 4px;
-`;
-
-export const Name = styled.span`
-  font-weight: 700;
-  font-size: 14px;
-  margin-right: 12px;
-  @media (max-width: 767px) {
-    font-size: 12px;
-  }
-`;
-
-export const ContactsHead = styled.div`
-  display: flex;
-  gap: 15px;
-`;
-
-
-
 export const Book = styled.div`
   margin-top: 20px;
   margin-left: 20px;
+  @media (max-width: 767px) {
+    margin-left: 0px;
+  }
 `;
 
 export const Button = styled.button`
@@ -85,7 +67,6 @@ export const Li = styled.div`
   display: flex;
   gap: 15px;
   align-items: baseline;
-  /* position: relative; */
   width: 380px;
   height: 460px;
   background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
