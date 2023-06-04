@@ -1,4 +1,3 @@
-// import React, { useState } from 'react';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setStatusFilter } from 'redux/filtersSlice';
@@ -11,11 +10,9 @@ import FormControl from '@mui/material/FormControl';
 
 const Filter = () => {
   const filterDefault = useSelector(getFilter);
-  // const [filter, setFilter] = useState('');
   const dispatch = useDispatch();
   const handleChange = e => {
     const val = e.target.value;
-    // setFilter(val);
     dispatch(setStatusFilter(val));
   };
 
@@ -27,7 +24,6 @@ const Filter = () => {
           labelId="filter-label"
           id="filter-select"
           value={filterDefault}
-          // value={filter || filterDefault}
           onChange={handleChange}
           label="Filter"
         >

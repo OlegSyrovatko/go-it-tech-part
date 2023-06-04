@@ -22,7 +22,6 @@ import {
 
 const Tweets = () => {
   const dispatch = useDispatch();
-  // const location = useLocation();
   const navigate = useNavigate();
   const filter = useSelector(getFilter);
   const tweets = useSelector(selectAllTweets);
