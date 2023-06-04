@@ -2,7 +2,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { followTweet, unFollowTweet } from 'redux/tweets/operations';
 import { selectFollowers } from 'redux/tweets/selectors';
 
-import { P, Button } from './TweetListItem.styled';
+import {
+  Avatar,
+  Img,
+  Rect,
+  Tweets,
+  Foll,
+  Blocks,
+  ButtonFw,
+  ButtonFwg,
+  ButtonText,
+} from './TweetListItem.styled';
 
 const TweetListItem = ({ tweet }) => {
   const dispatch = useDispatch();
@@ -11,27 +21,40 @@ const TweetListItem = ({ tweet }) => {
 
   return (
     <>
-      <P>{tweet.user}</P>
-      <P>{tweet.avatar}</P>
-      <P>{tweet.tweets}</P>
-      <P>{tweet.followers}</P>
-      {isFollower ? (
-        <Button
-          onClick={() => {
-            dispatch(unFollowTweet(tweet));
-          }}
-        >
-          UnFollow
-        </Button>
-      ) : (
-        <Button
-          onClick={() => {
-            dispatch(followTweet(tweet));
-          }}
-        >
-          Follow
-        </Button>
-      )}
+      <Rect />
+      <Avatar>
+        <Img
+          src={tweet.avatar}
+          title={tweet.user}
+          alt={tweet.user}
+          width={63}
+          height={63}
+        />
+      </Avatar>
+      <Blocks>
+        <Tweets>{tweet.tweets} tweets</Tweets>
+        <Foll>
+          {tweet.followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+          followers
+        </Foll>
+        {isFollower ? (
+          <ButtonFwg
+            onClick={() => {
+              dispatch(unFollowTweet(tweet));
+            }}
+          >
+            <ButtonText>Following</ButtonText>
+          </ButtonFwg>
+        ) : (
+          <ButtonFw
+            onClick={() => {
+              dispatch(followTweet(tweet));
+            }}
+          >
+            <ButtonText>Follow</ButtonText>
+          </ButtonFw>
+        )}
+      </Blocks>
     </>
   );
 };

@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
-import picture2 from './picture2.png';
-import Vector from './Vector.svg';
+import picture2 from './images/picture2.png';
+import Vector from './images/Vector.svg';
+
+import Ellipse from './images/Ellipse.png';
 
 export const Container = styled.div`
   display: flex;
@@ -83,7 +85,7 @@ export const Li = styled.div`
   display: flex;
   gap: 15px;
   align-items: baseline;
-  position: relative;
+  /* position: relative; */
   width: 380px;
   height: 460px;
   background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
@@ -94,8 +96,8 @@ export const Li = styled.div`
 export const Pic = styled.div`
   position: absolute;
   margin: 28px 36px 264px;
-  width: 100%;
-  height: 100%;
+  width: 308px;
+  height: 168px;
   background: url(${picture2})  no-repeat;
 `;
 
@@ -103,7 +105,17 @@ export const Goit = styled.div`
   position: absolute;
   margin-top: 20px;
   margin-left: 20px;
-  width: 100%;
-  height: 100%;
+  width: 76px;
+  height: 22px;
   background: url(${Vector})  no-repeat;
 `;
+
+export const Ellip = styled.div`
+  position: absolute;
+  margin: 178px 145px 202px;
+  width: 90px;
+  height: 89px;
+  background: url(${Ellipse})  no-repeat;
+  z-index: 2;
+`;
+
