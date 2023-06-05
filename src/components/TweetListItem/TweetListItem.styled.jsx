@@ -6,6 +6,7 @@ export const ButtonFw = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   padding: 14px 28px;
   gap: 6px;
   margin-top: 26px;
@@ -15,12 +16,17 @@ export const ButtonFw = styled.button`
   background: #ebd8ff;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
+
+  &:hover {
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.5);
+  }
 `;
 
 export const ButtonFwg = styled.button`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  cursor: pointer;
   align-items: center;
   padding: 14px 28px;
   gap: 6px;
@@ -31,6 +37,10 @@ export const ButtonFwg = styled.button`
   background: #5cd3a8;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
+
+  &:hover {
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.5);
+  }
 `;
 
 export const ButtonText = styled.span`
